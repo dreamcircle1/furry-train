@@ -30,11 +30,56 @@ float类型的数值后缀为F或f，double类型的数值后缀为D或d，没�
 
 2.3字符类型
 char  要用单引号括起来，如'A'
+强烈建议不要在程序中使用char类型，除非确实需要处理UTF-16代码单元。
 
 2.4boolean类型
 布尔类型有两个值：true和false，不像C/C++那样，0相当于false，非0相当于true，Java中整型值和布尔值之间不能相互转换。
 
 3.变量与常量
+3.1声明变量
+double salary;
+int vacationDays;
+long earthPopulation;
+boolean done;
+常用的变量命名：
+Box box;
+Box aBox;//"Box" is a type
+
+3.2变量初始化
+声明之后，使用赋值语句进行显式初始化。未初始化的变量的值不能使用。
+int vacationDays;
+vacationDays = 12;
+也可以将声明和初始化放在同一行：
+int vacationDays = 12;
+变量的声明尽可能靠近变量第一次使用的地方，这是一种良好的编程习惯。
+从Java10开始，如果可以从变量的初始值推断出变量的类型，就不再需要为变量声明类型。只需使用关键字var：
+var vacationDays = 12;//vacationDays is an int
+var greeting = "hello";//greeting is a string
+Java不区分声明和定义，C/C++区分声明和定义。
+
+3.3常量
+在Java中，使用关键字final指示常量。常量意味着只能被赋值一次，一旦赋值，不可更改。常量名一般使用全大写。
+final double CM_PER_INCH = 2.54;
+如果希望某个常量可以在一个类的多个方法中使用，可以使用关键字static final设置一个类常量（class constant）。类常量的定义位于main方法的外部，也正因如此，同一个类的其他方法也可以使用这个常量。
+如果希望在其他类的方法中使用这个常量，可以将其声明为public。
+public class Constants
+{
+  public static final double CM_PER_INCH = 2.54;
+  
+  public static void main(String[] args)
+  {
+  }
+}
+const是Java的关键字，但是目前并没有使用，在Java中，必须使用final定义常量。
+
+3.4枚举类型
+有时候，变量的取值只在一个有限的集合内。如衣服尺码一般只有小、中、大和超大四种，可以将这些尺码编码为1、2、3、4。但是在使用时，变量中保存的可能是一个错误无意义的值，如0。
+为了避免这种情况发生， 我们可以自定义枚举类型，将变量的取值限制在一个有限的集合内。如
+enume Size { SMALL, MEDIUM, LARGE, EXTRE_LARGE };
+之后，就可以声明Size类型的变量：
+Size s = Size.MEDIUM;
+Size类型的变量只能存储类型声明中给定的某个枚举值，或者是null，null表示这个变量没有设置任何值。
+
 
 
 
