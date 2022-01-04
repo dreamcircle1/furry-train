@@ -89,7 +89,49 @@ Size类型的变量只能存储类型声明中给定的某个枚举值，或者�
 整数除以0，会产生一个异常；浮点数除以0，会得到无穷大或NaN。
 
 4.2数学函数与常量
- 
+Math类中，包含了各种各样的数学函数。
+平方根函数，sqrt:
+double y = Math.sqrt(x);
+幂函数，pow:
+double y = Math.pow(x,a); //y = x^a
+关于整数求余数的方法，floormod;  (？不懂）
+三角函数：
+Math.sin
+Math.cos
+Math.tan
+Math.atan
+Math.atan2
+指数函数和对数函数：
+Math.exp //exponent
+Math.log
+Math.log10
+π和e常量的近似值：
+Math.PI
+Math.E
+在实际使用时，不必在这些方法和常量面前添加“Math”前缀，只需在源文件顶部进行静态导入：
+import static java.lang.Math.*;
+Math类与StrictMath类的区别（？不懂）
+
+4.3数值类型之间的转换
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
